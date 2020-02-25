@@ -17,7 +17,7 @@ for p in range(1000):
     print(p)
 
     population=[0,1] #array of individuals, with either hawk or dove strategy, this is the initial population
-    F=100 #number of food sources, each with 2 food in
+    F=1000 #number of food sources, each with 2 food in
     T=100 #run time (let's call it days)
     t=0 #start time
     G=random.randint(1,10) #total prize
@@ -117,6 +117,11 @@ for p in range(1000):
     lmat.append(G/C)
     
 plt.scatter(lmat,zmat, color='black', s=10)
+plt.xlabel("\u03BB")
+plt.ylabel("z")
+
+plt.rcParams['pdf.fonttype'] = 42
+plt.savefig('F1000RealisticEnvironmentIterated.pdf',bbox_inches='tight',transparent = True)
 plt.show()
 
    
@@ -126,8 +131,7 @@ plt.show()
 #plt.ylabel("Number of Individuals")
 #plt.legend()
 
-#plt.rcParams['pdf.fonttype'] = 42
-#plt.savefig('MultiplayerHawksandDovesPureStrategy.pdf',bbox_inches='tight',transparent = True)
+
 
 
 

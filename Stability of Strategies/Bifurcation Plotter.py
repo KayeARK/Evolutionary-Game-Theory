@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import pylab
-from matplotlib import cm#
+from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
 import seaborn
 

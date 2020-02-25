@@ -12,28 +12,31 @@ from random import randint
 #p/q<1 food is p/q chance of surviving
 #1+p/q>1 food is p/q chance of replicating
 
-population=([0]*100)+([1]*100) #array of individuals, with either hawk or dove strategy, this is the initial population
-T=10000 #run time (let's call it days)
+samplingpopulation=([0]*100)+([1]*100) #array of individuals, with either hawk or dove strategy, this is the initial samplingpopulation
+T=100 #run time (let's call it days)
 t=0 #start time
-G=30 #total prize
-C=100 #cost
-N=2
+G=7 #total prize
+C=3 #cost
+N=3
 
-hawks=[population.count(1)]
-doves=[population.count(0)]
+
+hawks=[samplingpopulation.count(1)]
+doves=[samplingpopulation.count(0)]
 time=[0]
 
 while t<T:
     
-    n=5 #math.ceil(len(population)/N)    
+    population=samplingpopulation
+    
+    n=math.ceil(len(samplingpopulation)/N)    
     
     for i in range(n):        
         
         game=[]
         
         for j in range(N):
-            if len(population)>N-1:
-                game.append(random.choice(population))
+            if len(samplingpopulation)>N-1:
+                game.append(random.choice(samplingpopulation))
         
         if game.count(1)==1: #one hawk
             for j in range(game.count(1)):

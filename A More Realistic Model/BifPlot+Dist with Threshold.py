@@ -16,8 +16,9 @@ N=2
 
 amat=[]
 solutions=[]
-arange=121
+arange=141
 astep=0.05
+F=1000
 
    
     
@@ -75,11 +76,11 @@ for p in range(100):
 
     print(p)
     population=[]
-    G=random.randint(1,6)
+    G=random.randint(1,7)
     C=random.randint(1,10)
-    Time=10
+    Time=100
     #population_size=10000
-    population=([0]*50)+([1]*50)
+    population=([0]*500)+([1]*500)
 
     population_size=len(population)
 
@@ -95,7 +96,14 @@ for p in range(100):
         population_size=len(population)
         HPayoff=0
         DPayoff=0
-        for i in range(math.ceil(population_size/N)):
+        
+        if population_size/N < F:
+            games=math.ceil(population_size/N)
+    
+        else:
+            games=F
+            
+        for i in range(games):#range(math.ceil(population_size/N)):
             game=[]
             for j in range(N):
                 game.append(population[randint(0,population_size-1)])
@@ -139,8 +147,8 @@ for p in range(100):
                 
 plt.scatter(lmat,zmat, color='black', s=10)
 
-plt.rcParams['pdf.fonttype'] = 42
-plt.savefig('TwoPlayerBifurcationDiagram.pdf',bbox_inches='tight',transparent = True)
+#plt.rcParams['pdf.fonttype'] = 42
+#plt.savefig('FivePlayer100ThresholdBifurcationDiagram.pdf',bbox_inches='tight',transparent = True)
 
 plt.show()
 
