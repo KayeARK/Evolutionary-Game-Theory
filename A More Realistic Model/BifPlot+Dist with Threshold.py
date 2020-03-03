@@ -12,11 +12,11 @@ import random
 from random import randint
 
 
-N=2
+N=3
 
 amat=[]
 solutions=[]
-arange=141
+arange=201
 astep=0.05
 F=1000
 
@@ -76,7 +76,7 @@ for p in range(100):
 
     print(p)
     population=[]
-    G=random.randint(1,7)
+    G=random.randint(1,10)
     C=random.randint(1,10)
     Time=100
     #population_size=10000
@@ -147,8 +147,8 @@ for p in range(100):
                 
 plt.scatter(lmat,zmat, color='black', s=10)
 
-#plt.rcParams['pdf.fonttype'] = 42
-#plt.savefig('FivePlayer100ThresholdBifurcationDiagram.pdf',bbox_inches='tight',transparent = True)
+plt.rcParams['pdf.fonttype'] = 42
+plt.savefig('ThreePlayerF1000ErrorThresholdBifurcationDiagram.pdf',bbox_inches='tight',transparent = True)
 
 plt.show()
 
