@@ -112,12 +112,15 @@ for l in range(100):
     doves.append(dovepopulation[-1]/(assessorpopulation[-1]+hawkpopulation[-1]+dovepopulation[-1]))
     hawks.append(hawkpopulation[-1]/(assessorpopulation[-1]+hawkpopulation[-1]+dovepopulation[-1]))
 
-plt.plot(iteration, assessors, label="Assessors")
-plt.plot(iteration, hawks, label="Hawks")
-plt.plot(iteration, doves, label="Doves")
-plt.xlabel("Simulation Number")
-plt.ylabel("y")
-plt.legend()
+#plt.plot(iteration, assessors, label="Assessors")
+#plt.plot(iteration, hawks, label="Hawks")
+#plt.plot(iteration, doves, label="Doves")
+plt.xlabel("Proportion of Population")
+plt.ylabel("Number of Occurrences")
+plt.hist(assessors, label="Assessors")
+#plt.hist(hawks, label="Hawks")
+plt.hist(doves, label="Doves")
+plt.legend(loc='upper center')
 
 plt.rcParams['pdf.fonttype'] = 42
 plt.savefig('LouiseMultiplayerHawksDovesAssessorsPureStrategyyGraphN5.pdf',bbox_inches='tight',transparent = True)
